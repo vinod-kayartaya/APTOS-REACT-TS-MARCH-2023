@@ -13,6 +13,8 @@ type MovieType = {
 const MovieApp = () => {
     const [keyword, setKeyword] = useState('');
     const [movies, setMovies] = useState([]);
+    const [flag, setFlag] = useState(false);
+
     const moviesJsx = movies.map((m: MovieType) => (
         <li className='list-group-item' key={m.imdbID}>
             <div className='row'>
@@ -36,9 +38,14 @@ const MovieApp = () => {
         if (!keyword) return;
 
         const url = `https://www.omdbapi.com/?apikey=${apikey}&s=${keyword}`;
+
+        setFlag(true);
+
         const resp = await fetch(url);
         const result = await resp.json();
         setMovies(result.Search);
+
+        setFlag(false);
     };
 
     return (
@@ -55,7 +62,14 @@ const MovieApp = () => {
                     />
                 </form>
 
-                <ul className='list-group'>{moviesJsx}</ul>
+                {flag && (
+                    <img
+                        src='https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif'
+                        alt='loading'
+                    />
+                )}
+
+                {!flag && <ul className='list-group'>{moviesJsx}</ul>}
             </div>
         </>
     );
