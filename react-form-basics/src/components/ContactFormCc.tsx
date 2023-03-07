@@ -1,23 +1,57 @@
 import React, { Component } from 'react';
 
-export class ContactFormCc extends Component {
+type ContactFormCcPropsType = {};
+
+type ContactFormCcStateType = {
+    fullname?: string;
+    email?: string;
+    phone?: string;
+};
+
+export class ContactFormCc extends Component<
+    ContactFormCcPropsType,
+    ContactFormCcStateType
+> {
+    constructor(props: ContactFormCcPropsType) {
+        super(props);
+        console.log('ContactFormCc constructor called at', new Date());
+        this.changeHandler = this.changeHandler.bind(this);
+    }
+
     state = {
         fullname: '',
         email: '',
         phone: '',
     };
 
-    changeHandler = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    changeHandler(evt: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = evt.target;
-        this.setState({ [name]: value });
-    };
+        this.setState({ [name]: value }); // mutates the state and re-renders the comp
+    }
 
     submitHandler = (evt: React.FormEvent<HTMLFormElement>) => {
         evt.preventDefault();
         alert(`Value of this.state is ${JSON.stringify(this.state)}`);
     };
 
+    componentDidMount() {
+        console.log('ContactFormCc.componentDidMount() called at', new Date());
+    }
+
+    componentWillUnmount() {
+        console.log(
+            'ContactFormCc.componentWillUnmount() called at',
+            new Date()
+        );
+    }
+
+    shouldComponentUpdate() {
+        return true;
+    }
+
     render() {
+        // never call this.setState()
+        console.log('ContactFormCc.render() called at', new Date());
         return (
             <>
                 <form onSubmit={this.submitHandler}>
