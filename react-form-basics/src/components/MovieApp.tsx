@@ -12,10 +12,10 @@ type MovieType = {
 
 const MovieApp = () => {
     const [keyword, setKeyword] = useState('');
-    const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState<MovieType[]>([]);
     const [flag, setFlag] = useState(false);
 
-    const moviesJsx = movies.map((m: MovieType) => (
+    const moviesJsx = movies.map((m) => (
         <li className='list-group-item' key={m.imdbID}>
             <div className='row'>
                 <div className='col-2'>
