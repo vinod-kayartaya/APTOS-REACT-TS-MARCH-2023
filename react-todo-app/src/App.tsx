@@ -57,6 +57,27 @@ function App() {
         setTasks([...tasks]);
     };
 
+    const deleteTodo = (id: number) => {
+        const remainingTasks = tasks.filter((t) => t.id !== id);
+        setTasks(remainingTasks);
+    };
+
+    const deleteAll = () => {
+        setTasks([]);
+    };
+
+    const deleteCompletedTasks = () => {
+        const remainingTasks = tasks.filter((t) => !t.completed);
+        setTasks(remainingTasks);
+    };
+
+    const updateTask = (id: number, taskText: string) => {
+        const task = tasks.find((t) => t.id === id);
+        if (task) {
+            task.text = taskText;
+            setTasks([...tasks]);
+        }
+    };
     return (
         <>
             <Header tasks={tasks} />
@@ -70,6 +91,8 @@ function App() {
                         <TodoList
                             tasks={tasks}
                             toggleTodoStatus={toggleTodoStatus}
+                            deleteAll={deleteAll}
+                            deleteCompletedTasks={deleteCompletedTasks}
                         />
                     </div>
                 </div>
