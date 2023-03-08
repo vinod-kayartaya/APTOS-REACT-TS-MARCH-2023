@@ -94,6 +94,7 @@ function App() {
                             deleteAll={deleteAll}
                             deleteCompletedTasks={deleteCompletedTasks}
                             deleteTask={deleteTask}
+                            updateTask={updateTask}
                         />
                     </div>
                 </div>

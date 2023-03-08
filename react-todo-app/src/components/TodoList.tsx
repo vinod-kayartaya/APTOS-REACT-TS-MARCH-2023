@@ -8,6 +8,7 @@ type TodoListProps = {
     deleteTask: (id: number) => void;
     deleteAll: () => void;
     deleteCompletedTasks: () => void;
+    updateTask: (id: number, taskText: string) => void;
 };
 
 export class TodoList extends Component<TodoListProps> {
@@ -18,6 +19,7 @@ export class TodoList extends Component<TodoListProps> {
             deleteAll,
             deleteCompletedTasks,
             deleteTask,
+            updateTask,
         } = this.props;
 
         const tasksJsx = tasks.map((t) => (
@@ -26,6 +28,7 @@ export class TodoList extends Component<TodoListProps> {
                     task={t}
                     toggleTodoStatus={toggleTodoStatus}
                     deleteTask={deleteTask}
+                    updateTask={updateTask}
                 />
             </li>
         ));

@@ -4,16 +4,31 @@ import { Task } from '../App';
 type ToolbarProps = {
     task: Task;
     deleteTask: (id: number) => void;
+    setIsEditable: (isEditable: boolean) => void;
+    cancelEdit: () => void;
+    isEditable: boolean
 };
 
 export class Toolbar extends Component<ToolbarProps> {
     render() {
-        const { task, deleteTask } = this.props;
+        const { task, deleteTask, setIsEditable, isEditable, cancelEdit } =
+            this.props;
 
         return (
             <>
                 <span className='toolbar'>
-                    <button className='btn btn-link bi bi-pencil'></button>
+                    {!isEditable ? (
+                        <button
+                            onClick={() => setIsEditable(true)}
+                            className='btn btn-link bi bi-pencil'
+                        ></button>
+                    ) : (
+                        <button
+                            onClick={() => cancelEdit()}
+                            className='btn btn-link bi bi-x-circle'
+                        ></button>
+                    )}
+
                     <button
                         onClick={() => deleteTask(task.id)}
                         className='btn btn-link bi bi-trash'
