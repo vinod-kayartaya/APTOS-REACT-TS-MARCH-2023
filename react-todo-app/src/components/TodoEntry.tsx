@@ -5,12 +5,17 @@ import Toolbar from './Toolbar';
 type TodoEntryProps = {
     task: Task;
     toggleTodoStatus: (id: number) => void;
+    deleteTask: (id: number) => void;
 };
 
-const TodoEntry: React.FC<TodoEntryProps> = ({ task, toggleTodoStatus }) => {
+const TodoEntry: React.FC<TodoEntryProps> = ({
+    task,
+    toggleTodoStatus,
+    deleteTask,
+}) => {
     return (
         <>
-            <div className='row'>
+            <div className='row todoEntry'>
                 <div className='col'>
                     <span
                         onClick={() => toggleTodoStatus(task.id)}
@@ -26,7 +31,7 @@ const TodoEntry: React.FC<TodoEntryProps> = ({ task, toggleTodoStatus }) => {
                     </span>
                 </div>
                 <div className='col-4'>
-                    <Toolbar />
+                    <Toolbar task={task} deleteTask={deleteTask} />
                 </div>
             </div>
         </>

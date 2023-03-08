@@ -5,18 +5,28 @@ import TodoEntry from './TodoEntry';
 type TodoListProps = {
     tasks: Task[];
     toggleTodoStatus: (id: number) => void;
+    deleteTask: (id: number) => void;
     deleteAll: () => void;
     deleteCompletedTasks: () => void;
 };
 
 export class TodoList extends Component<TodoListProps> {
     render() {
-        const { tasks, toggleTodoStatus, deleteAll, deleteCompletedTasks } =
-            this.props;
+        const {
+            tasks,
+            toggleTodoStatus,
+            deleteAll,
+            deleteCompletedTasks,
+            deleteTask,
+        } = this.props;
 
         const tasksJsx = tasks.map((t) => (
             <li className='list-group-item' key={t.id}>
-                <TodoEntry task={t} toggleTodoStatus={toggleTodoStatus} />
+                <TodoEntry
+                    task={t}
+                    toggleTodoStatus={toggleTodoStatus}
+                    deleteTask={deleteTask}
+                />
             </li>
         ));
 

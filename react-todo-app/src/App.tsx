@@ -57,7 +57,7 @@ function App() {
         setTasks([...tasks]);
     };
 
-    const deleteTodo = (id: number) => {
+    const deleteTask = (id: number) => {
         const remainingTasks = tasks.filter((t) => t.id !== id);
         setTasks(remainingTasks);
     };
@@ -93,6 +93,7 @@ function App() {
                             toggleTodoStatus={toggleTodoStatus}
                             deleteAll={deleteAll}
                             deleteCompletedTasks={deleteCompletedTasks}
+                            deleteTask={deleteTask}
                         />
                     </div>
                 </div>
