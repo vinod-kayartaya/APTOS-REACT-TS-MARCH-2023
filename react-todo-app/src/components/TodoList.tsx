@@ -6,6 +6,8 @@ type TodoListProps = {
     tasks: Task[];
     toggleTodoStatus: (id: number) => void;
     deleteTask: (id: number) => void;
+    moveUp: (id: number) => void;
+    moveDown: (id: number) => void;
     deleteAll: () => void;
     deleteCompletedTasks: () => void;
     updateTask: (id: number, taskText: string) => void;
@@ -20,6 +22,8 @@ export class TodoList extends Component<TodoListProps> {
             deleteCompletedTasks,
             deleteTask,
             updateTask,
+            moveDown,
+            moveUp
         } = this.props;
 
         const tasksJsx = tasks.map((t) => (
@@ -27,6 +31,8 @@ export class TodoList extends Component<TodoListProps> {
                 <TodoEntry
                     task={t}
                     toggleTodoStatus={toggleTodoStatus}
+                    moveUp={moveUp}
+                    moveDown={moveDown}
                     deleteTask={deleteTask}
                     updateTask={updateTask}
                 />

@@ -78,6 +78,27 @@ function App() {
             setTasks([...tasks]);
         }
     };
+
+    const moveUp = (id: number) => {
+        const index = tasks.findIndex((t) => t.id === id);
+        if (index <= 0) return;
+
+        const tmp: Task = tasks[index];
+        tasks[index] = tasks[index - 1];
+        tasks[index - 1] = tmp;
+        setTasks([...tasks]);
+    };
+
+    const moveDown = (id: number) => {
+        const index = tasks.findIndex((t) => t.id === id);
+        if (index === -1 || index === tasks.length - 1) return;
+
+        const tmp: Task = tasks[index];
+        tasks[index] = tasks[index + 1];
+        tasks[index + 1] = tmp;
+        setTasks([...tasks]);
+    };
+
     return (
         <>
             <Header tasks={tasks} />
@@ -95,6 +116,8 @@ function App() {
                             deleteCompletedTasks={deleteCompletedTasks}
                             deleteTask={deleteTask}
                             updateTask={updateTask}
+                            moveDown={moveDown}
+                            moveUp={moveUp}
                         />
                     </div>
                 </div>

@@ -6,13 +6,22 @@ type ToolbarProps = {
     deleteTask: (id: number) => void;
     setIsEditable: (isEditable: boolean) => void;
     cancelEdit: () => void;
-    isEditable: boolean
+    isEditable: boolean;
+    moveUp: (id: number) => void;
+    moveDown: (id: number) => void;
 };
 
 export class Toolbar extends Component<ToolbarProps> {
     render() {
-        const { task, deleteTask, setIsEditable, isEditable, cancelEdit } =
-            this.props;
+        const {
+            task,
+            deleteTask,
+            setIsEditable,
+            isEditable,
+            cancelEdit,
+            moveDown,
+            moveUp,
+        } = this.props;
 
         return (
             <>
@@ -33,8 +42,14 @@ export class Toolbar extends Component<ToolbarProps> {
                         onClick={() => deleteTask(task.id)}
                         className='btn btn-link bi bi-trash'
                     ></button>
-                    <button className='btn btn-link bi bi-arrow-up-circle'></button>
-                    <button className='btn btn-link bi bi-arrow-down-circle'></button>
+                    <button
+                        onClick={() => moveUp(task.id)}
+                        className='btn btn-link bi bi-arrow-up-circle'
+                    ></button>
+                    <button
+                        onClick={() => moveDown(task.id)}
+                        className='btn btn-link bi bi-arrow-down-circle'
+                    ></button>
                 </span>
             </>
         );

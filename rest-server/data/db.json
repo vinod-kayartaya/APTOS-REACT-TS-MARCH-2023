@@ -1,0 +1,230 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Onion",
+            "description": "Fresho Onion (Loose), 1 kg",
+            "unitPrice": 27.52,
+            "quantityPerUnit": "1 kg",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/10000148_30-fresho-onion.jpg"
+        },
+
+        {
+            "id": 2,
+            "name": "Mushrooms",
+            "description": "Fresho Mushrooms - Button",
+            "unitPrice": 46,
+            "quantityPerUnit": "1 pack (Approx .180g - 200 g)",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/10000273_16-fresho-mushrooms-button.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Orange - Nagpur",
+            "description": "Fresho Orange - Nagpur, Regular (Loose)",
+            "unitPrice": 42.75,
+            "quantityPerUnit": "500 g",
+            "category": "fruit",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/10000267_23-fresho-orange-nagpur-regular.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Tender Coconut",
+            "description": "Fresho Tender Coconut, 1 pc",
+            "unitPrice": 34,
+            "quantityPerUnit": "1 pc",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/40057966_3-fresho-tender-coconut-medium.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Tomato - Local",
+            "description": "Fresho Tomato - Local, Organically Grown (Loose)",
+            "unitPrice": 32.12,
+            "quantityPerUnit": "1 kg",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/40130385_3-fresho-tomato-local-organically-grown.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Pomegranate",
+            "description": "Fresho Pomegranate (Loose)",
+            "unitPrice": 189.5,
+            "quantityPerUnit": "4 pcs (approx. 720 - 800 g)",
+            "category": "fruit",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/10000269_31-fresho-pomegranate.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Pear - Green",
+            "description": "Fresho Pear - Green, Imported",
+            "unitPrice": 108,
+            "quantityPerUnit": "4 pcs",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/40048445_2-fresho-pear-green-imported.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Ginger",
+            "description": "Fresho Ginger - Organically Grown (Loose)",
+            "unitPrice": 25.69,
+            "quantityPerUnit": "250 g",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/40023480_4-fresho-ginger-organically-grown.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Blueberry",
+            "description": "Fresho Blueberry",
+            "unitPrice": 187.5,
+            "quantityPerUnit": "125 gm",
+            "category": "fruit",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/30009286_7-fresho-blueberry.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Chilli - Green",
+            "description": "Fresho Chilli - Green, Organically Grown (Loose)",
+            "unitPrice": 23.75,
+            "quantityPerUnit": "250 gm",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/50000512_9-fresho-chilli-green-organically-grown.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Sweet Corn",
+            "description": "Fresho Sweet Corn (Loose)",
+            "unitPrice": 35,
+            "quantityPerUnit": "2 pcs",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/40004992_14-fresho-sweet-corn.jpg"
+        },
+        {
+            "id": 12,
+            "name": "Baby Orange",
+            "description": "Fresho Baby Orange (Loose)",
+            "unitPrice": 218.5,
+            "quantityPerUnit": "1 kg",
+            "category": "fruit",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/20003955_2-fresho-baby-orange.jpg"
+        },
+        {
+            "id": 13,
+            "name": "Bottle Gourd",
+            "description": "Fresho Bottle Gourd (Loose)",
+            "unitPrice": 23.5,
+            "quantityPerUnit": "1 pc (Approx. 500 g - 800 g)",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/20000745_5-fresho-bottle-gourd.jpg"
+        },
+        {
+            "id": 14,
+            "name": "Potato",
+            "description": "Fresho Potato - Fresh Crop",
+            "unitPrice": 52.21,
+            "quantityPerUnit": "1 kg",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/10000159_26-fresho-potato.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Banana - Yelakki",
+            "description": "Fresho Banana - Yelakki, Organically Grown",
+            "unitPrice": 107.25,
+            "quantityPerUnit": "1 kg",
+            "category": "fruit",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/50000457_4-fresho-banana-yelakki-organically-grown.jpg"
+        },
+        {
+            "id": 16,
+            "name": "Curry Leaves",
+            "description": "Fresho Curry Leaves, 1 kg",
+            "unitPrice": 122.5,
+            "quantityPerUnit": "1 kg",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/10000327_13-fresho-curry-leaves.jpg"
+        },
+        {
+            "id": 17,
+            "name": "Cucumber - English",
+            "description": "Fresho Cucumber - English (Loose)",
+            "unitPrice": 15.63,
+            "quantityPerUnit": "250 g",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/40018523_4-fresho-cucumber-english.jpg"
+        },
+        {
+            "id": 18,
+            "name": "Pear Beauty",
+            "description": "Fresho Pear Beauty, 2 pcs",
+            "unitPrice": 103,
+            "quantityPerUnit": "2 pcs",
+            "category": "fruit",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/40174618_4-fresho-pear-beauty.jpg"
+        },
+        {
+            "id": 19,
+            "name": "Mosambi - Economy",
+            "description": "Fresho Mosambi - Economy (Loose)",
+            "unitPrice": 56.5,
+            "quantityPerUnit": "1 kg",
+            "category": "fruit",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/40203347_2-fresho-mosambi-economy.jpg"
+        },
+        {
+            "id": 20,
+            "name": "Papaya - Small",
+            "description": "Fresho Papaya - Small, 1 pc 500 g - 800 g",
+            "unitPrice": 53,
+            "quantityPerUnit": "1 pc 500 gm - 800 gm",
+            "category": "fruit",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/40114961_4-fresho-papaya-small.jpg"
+        },
+        {
+            "id": 21,
+            "name": "Coconut - Large",
+            "description": "Fresho Coconut - Large, 1 pc (approx. 550g to 650g)",
+            "unitPrice": 33.5,
+            "quantityPerUnit": "1 pc (approx. 550 gm to 650 gm)",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/10000092_15-fresho-coconut-large.jpg"
+        },
+        {
+            "id": 22,
+            "name": "Orange - Imported",
+            "description": "Fresho Orange - Imported (Loose)",
+            "unitPrice": 194,
+            "quantityPerUnit": "6 pcs",
+            "category": "fruit",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/20000910_12-fresho-orange-imported.jpg"
+        },
+        {
+            "id": 23,
+            "name": "Banana - Nendran",
+            "description": "Fresho Banana - Nendran",
+            "unitPrice": 70,
+            "quantityPerUnit": "1 kg",
+            "category": "fruit",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/10000346_18-fresho-banana-nendran.jpg"
+        },
+        {
+            "id": 24,
+            "name": "Garlic",
+            "description": "Fresho Garlic (Loose)",
+            "unitPrice": 112.5,
+            "quantityPerUnit": "1 kg",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/10000330_14-fresho-garlic.jpg"
+        },
+        {
+            "id": 25,
+            "name": "Pumpkin Green",
+            "description": "Fresho Pumpkin Green - Cut",
+            "unitPrice": 24.63,
+            "quantityPerUnit": "500 gm",
+            "category": "vegetable",
+            "image": "https://www.bigbasket.com/media/uploads/p/l/40050087_4-fresho-pumpkin-green-cut.jpg"
+        }
+    ]
+}

@@ -7,6 +7,8 @@ type TodoEntryProps = {
     toggleTodoStatus: (id: number) => void;
     deleteTask: (id: number) => void;
     updateTask: (id: number, taskText: string) => void;
+    moveUp: (id: number) => void;
+    moveDown: (id: number) => void;
 };
 
 const TodoEntry: React.FC<TodoEntryProps> = ({
@@ -14,6 +16,8 @@ const TodoEntry: React.FC<TodoEntryProps> = ({
     toggleTodoStatus,
     deleteTask,
     updateTask,
+    moveDown,
+    moveUp
 }) => {
     const [isEditable, setIsEditable] = useState(false);
     const [taskText, setTaskText] = useState(task.text);
@@ -61,6 +65,8 @@ const TodoEntry: React.FC<TodoEntryProps> = ({
                         cancelEdit={cancelEdit}
                         deleteTask={deleteTask}
                         setIsEditable={setIsEditable}
+                        moveUp={moveUp}
+                        moveDown={moveDown}
                     />
                 </div>
             </div>
