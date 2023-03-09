@@ -1,3 +1,5 @@
+import LoginForm from './LoginForm';
+
 const Authenticate = ({ children }: any) => {
     let isAuthenticated = localStorage.getItem('isAuthenticated');
     if (isAuthenticated !== null) {
@@ -5,7 +7,7 @@ const Authenticate = ({ children }: any) => {
     }
 
     if (!isAuthenticated) {
-        return <h3>Login required.</h3>;
+        return <LoginForm />;
     }
 
     return <>{children}</>;
