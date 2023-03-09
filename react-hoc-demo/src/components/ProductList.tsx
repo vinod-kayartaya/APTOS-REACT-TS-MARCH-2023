@@ -1,3 +1,5 @@
+import withAuth from '../hoc/withAuth';
+import withLoading from '../hoc/withLoading';
 import withUrl from '../hoc/withUrl';
 
 type Product = {
@@ -46,7 +48,9 @@ const ProductList = ({ products }: ProductListProps) => {
     );
 };
 
-export default withUrl({
-    url: 'http://localhost:4000/products',
-    prop: 'products',
-})(ProductList);
+export default withAuth(
+    withUrl({
+        url: 'http://localhost:4000/products',
+        prop: 'products',
+    })(withLoading('products')(ProductList))
+);

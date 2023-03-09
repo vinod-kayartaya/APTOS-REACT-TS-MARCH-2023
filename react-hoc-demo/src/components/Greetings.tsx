@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import withAuth from '../hoc/withAuth';
 import withBorder from '../hoc/withBorder';
 
 export class Greetings extends Component {
@@ -11,4 +12,6 @@ export class Greetings extends Component {
     }
 }
 
-export default withBorder('primary')(withBorder('warning')(Greetings));
+export default withBorder('primary')(
+    withBorder('warning')(withAuth(Greetings))
+);
