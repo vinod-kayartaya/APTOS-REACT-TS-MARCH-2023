@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import { DECREMENT, INCREMENT } from '../redux/types';
 
 interface IToolbarProps {
     increment: () => void;
@@ -31,8 +32,8 @@ export class Toolbar extends Component<IToolbarProps> {
 
 const mapState = null;
 const mapDispatch = {
-    increment: () => ({ type: 'INCREMENT' }),
-    decrement: () => ({ type: 'DECREMENT' }),
+    increment: () => ({ type: INCREMENT }),
+    decrement: () => ({ type: DECREMENT }),
 };
 
 export default connect(mapState, mapDispatch)(Toolbar);
