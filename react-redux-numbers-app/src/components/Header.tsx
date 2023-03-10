@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { IStore } from '../redux/store';
+import { RootStoreType } from '../redux/store';
 
 interface IHeaderProps {
     incCount: number;
@@ -25,7 +25,7 @@ export class Header extends Component<IHeaderProps> {
     }
 }
 
-const mapState = (store: IStore) => ({
+const mapState = (store: RootStoreType) => ({
     incCount: store.counterReducerState.incrementCount,
     decCount: store.counterReducerState.decrementCount,
 });

@@ -1,15 +1,7 @@
 import { legacy_createStore as createStore } from 'redux';
 import rootReducer from './rootReducer';
 
-export interface ICounterReducer {
-    num: number;
-    incrementCount: number;
-    decrementCount: number;
-}
-
-export interface IStore {
-    counterReducerState: ICounterReducer
-}
+export type RootStoreType = ReturnType<typeof store.getState>;
 
 
 const store = createStore(rootReducer);
