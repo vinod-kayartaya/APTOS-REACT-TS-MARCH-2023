@@ -33,3 +33,24 @@ npx create-react-app react-basics --template typescript
 
 -   a function
 -   takes a component as argument, and returns same/modified/new component
+
+
+```js
+
+const root_redcucer = combineReducers({
+    numbersReducer,
+    cartReducer,
+    productReducer,
+    //...
+})
+
+const store = create_store(root_reducer);
+
+
+// example action:
+
+{ type: 'INCREMENT' }
+{ type: 'DEL_CUSTOMER', payload: 1123 }
+{ type: 'ADD_CUSTOMER', payload: {firstname: 'Vinod', lastname: 'Kumar', address: '', city: 'Bangalore'}}
+
+```
