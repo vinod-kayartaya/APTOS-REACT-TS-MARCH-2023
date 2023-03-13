@@ -9,3 +9,8 @@ export interface Product {
     picture: string,
     discount: number,
 }
+
+export interface LineItem {
+    product: Product;
+    quantity: number;
+}

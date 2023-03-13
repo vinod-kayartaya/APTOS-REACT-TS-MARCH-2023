@@ -1,12 +1,16 @@
-import { FETCH_PRODUCTS } from "./actionTypes";
+import { FETCH_BRANDS, FETCH_CATEGORIES, FETCH_PRODUCTS } from "./actionTypes";
 import { Product } from "./datatypes";
 
 const initialState = {
-    products: []
+    products: [],
+    brands: [],
+    categories: []
 }
 
 interface State {
-    products: Array<Product>
+    products: Array<Product>,
+    categories: Array<string>,
+    brands: Array<string>
 }
 
 interface Action {
@@ -15,10 +19,16 @@ interface Action {
 }
 
 const productReducer = (state: State = initialState, action: Action) => {
+    console.log('productReducer called with action', action);
 
     if (action.type === FETCH_PRODUCTS) {
-        console.log('inside the productReducer, action is', action)
         return { ...state, products: action.payload }
+    }
+    if (action.type === FETCH_BRANDS) {
+        return { ...state, brands: action.payload }
+    }
+    if (action.type === FETCH_CATEGORIES) {
+        return { ...state, categories: action.payload }
     }
 
     return { ...state };

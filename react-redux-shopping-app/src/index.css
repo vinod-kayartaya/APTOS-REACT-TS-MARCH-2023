@@ -3,3 +3,7 @@
 .container {
     max-width: 1128px;
 }
+
+.app-clickable {
+    cursor: pointer;
+}
