@@ -1,25 +1,40 @@
 import { Provider } from 'react-redux';
-import Header from './components/Header';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import CartItems from './components/CartItems';
+import Layout from './components/Layout';
 import ProductList from './components/ProductList';
-import Sidebar from './components/Sidebar';
+
 import store from './redux/store';
 
 function App() {
     return (
         <>
             <Provider store={store}>
-                <Header />
-
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col-3'>
-                            <Sidebar />
-                        </div>
-                        <div className='col-9'>
-                            <ProductList />
-                        </div>
-                    </div>
-                </div>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path='/' element={<Layout />}>
+                            <Route path='' element={<ProductList />} />
+                            <Route path='products' element={<ProductList />} />
+                            <Route path='cart-items' element={<CartItems />} />
+                            <Route
+                                path='products-by-brand/:brand'
+                                element={<ProductList />}
+                            />
+                            <Route
+                                path='products-by-category/:category'
+                                element={<ProductList />}
+                            />
+                            <Route
+                                path='*'
+                                element={
+                                    <h3 className='text-danger'>
+                                        Page not found!
+                                    </h3>
+                                }
+                            />
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
             </Provider>
         </>
     );

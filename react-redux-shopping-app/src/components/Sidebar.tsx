@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
     fetchBrands,
     fetchCategories,
     fetchProductsByBrand,
     fetchProductsByCategory,
-} from '../redux/productActionCreators';
+} from '../redux/actions/productActionCreators';
 import { RootStoreType } from '../redux/store';
 
 interface SidebarProps {
@@ -26,22 +27,24 @@ export class Sidebar extends Component<SidebarProps> {
     render() {
         const { brands, categories } = this.props;
         const brandsJsx = brands.map((b) => (
-            <li
+            <Link
+                to={'/products-by-brand/' + b}
                 key={b}
                 className='app-clickable list-group-item text-capitalize'
                 onClick={() => this.props.fetchProductsByBrand(b)}
             >
                 {b.toLowerCase()}
-            </li>
+            </Link>
         ));
         const categoriesJsx = categories.map((c) => (
-            <li
+            <Link
+                to={'/products-by-category/' + c}
                 key={c}
                 className='app-clickable list-group-item text-capitalize'
                 onClick={() => this.props.fetchProductsByCategory(c)}
             >
                 {c.toLowerCase()}
-            </li>
+            </Link>
         ));
 
         return (

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Product } from '../redux/datatypes';
+import AddToCartButton from './AddToCartButton';
 
 interface ProductCardProps {
     product: Product;
@@ -22,7 +23,7 @@ export class ProductCard extends Component<ProductCardProps, ProductCardState> {
                     <div className='card-body'>
                         <h5 className='card-title'>{product.description}</h5>
                         <p className='card-text'>{product.quantity_per_unit}</p>
-                        <button className='btn btn-primary'>Add to cart</button>
+                        <AddToCartButton product={product} />
                     </div>
                 </div>
             </>

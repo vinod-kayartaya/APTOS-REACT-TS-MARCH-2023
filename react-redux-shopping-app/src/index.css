@@ -7,3 +7,12 @@
 .app-clickable {
     cursor: pointer;
 }
+
+.app-primary-link {
+    color: #fff;
+    text-decoration: none;
+}
+.app-primary-link:hover {
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,19 +1,38 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Product } from '../redux/datatypes';
-import { fetchProducts } from '../redux/productActionCreators';
+import {
+    fetchProducts,
+    fetchProductsByBrand,
+    fetchProductsByCategory,
+} from '../redux/actions/productActionCreators';
 import { RootStoreType } from '../redux/store';
 import ProductCard from './ProductCard';
+import { withRouter } from '../hoc/withRouter';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface ProductListProp {
     products: Array<Product>;
-    fetchProducts: any;
+    fetchProducts: () => void;
+    fetchProductsByBrand: (brand: string) => void;
+    fetchProductsByCategory: (category: string) => void;
+    location: ReturnType<typeof useLocation>;
+    params: Record<string, string>;
+    navigate: ReturnType<typeof useNavigate>;
 }
 interface ProductListState {}
 
 export class ProductList extends Component<ProductListProp, ProductListState> {
     componentDidMount(): void {
-        this.props.fetchProducts();
+        const { brand, category } = this.props.params;
+
+        if (brand) {
+            this.props.fetchProductsByBrand(brand);
+        } else if (category) {
+            this.props.fetchProductsByCategory(category);
+        } else {
+            this.props.fetchProducts();
+        }
     }
 
     render() {
@@ -35,6 +54,8 @@ const mapState = (store: RootStoreType) => ({
 
 const mapDispatch = {
     fetchProducts,
+    fetchProductsByBrand,
+    fetchProductsByCategory,
 };
 
-export default connect(mapState, mapDispatch)(ProductList);
+export default connect(mapState, mapDispatch)(withRouter(ProductList));
