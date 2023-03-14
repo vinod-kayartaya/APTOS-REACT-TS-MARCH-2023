@@ -41,7 +41,7 @@ export class AddToCartButton extends Component<AddToCartButtonProps> {
                             -
                         </button>
                     </div>
-                    <div className='col align-middle text-center'>
+                    <div className='col d-flex align-items-center justify-content-center'>
                         {li.quantity}
                     </div>
                     <div className='col d-grid'>

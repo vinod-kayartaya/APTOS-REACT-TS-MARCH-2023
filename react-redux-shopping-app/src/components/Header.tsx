@@ -11,7 +11,9 @@ interface HeaderProps {
 export class Header extends Component<HeaderProps> {
     render() {
         const { cart } = this.props;
-
+        const totalQty = cart
+            .map((li) => li.quantity)
+            .reduce((a, b) => a + b, 0);
         return (
             <>
                 <div className='alert alert-primary'>
@@ -33,7 +35,7 @@ export class Header extends Component<HeaderProps> {
                                         <i className='bi bi-cart'></i>{' '}
                                         {cart && cart.length > 0 && (
                                             <span className='badge text-bg-secondary'>
-                                                ({cart.length})
+                                                ({totalQty})
                                             </span>
                                         )}
                                     </Link>
