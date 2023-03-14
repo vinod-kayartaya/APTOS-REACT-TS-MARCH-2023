@@ -17,7 +17,8 @@ interface AddToCartButtonProps {
 }
 export class AddToCartButton extends Component<AddToCartButtonProps> {
     render() {
-        const { addToCart, product } = this.props;
+        const { addToCart, product, cart, increaseQuantity, decreaseQuantity } =
+            this.props;
 
         let jsx = (
             <button
@@ -27,6 +28,33 @@ export class AddToCartButton extends Component<AddToCartButtonProps> {
                 Add to cart
             </button>
         );
+
+        const li = cart.find((li) => li.product.id === product.id);
+        if (li) {
+            jsx = (
+                <div className='row border border-primary app-add-to-cart-btn'>
+                    <div className='col d-grid'>
+                        <button
+                            onClick={() => decreaseQuantity(product)}
+                            className='btn btn-primary'
+                        >
+                            -
+                        </button>
+                    </div>
+                    <div className='col align-middle text-center'>
+                        {li.quantity}
+                    </div>
+                    <div className='col d-grid'>
+                        <button
+                            onClick={() => increaseQuantity(product)}
+                            className='btn btn-primary'
+                        >
+                            +
+                        </button>
+                    </div>
+                </div>
+            );
+        }
 
         return (
             <>

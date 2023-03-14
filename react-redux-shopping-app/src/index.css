@@ -16,3 +16,13 @@
     color: #fff;
     text-decoration: none;
 }
+
+.app-add-to-cart-btn > * {
+    padding-left: 0;
+    padding-right: 0;
+}
+img.app-thumbnail {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}

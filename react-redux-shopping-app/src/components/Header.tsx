@@ -42,7 +42,6 @@ export class Header extends Component<HeaderProps> {
                         </div>
                     </div>
                 </div>
-                <div className='container'>{JSON.stringify(cart)}</div>
             </>
         );
     }
