@@ -2,6 +2,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CartItems from './components/CartItems';
 import Layout from './components/Layout';
+import LoginForm from './components/LoginForm';
 import ProductList from './components/ProductList';
 
 import store from './redux/store';
@@ -24,6 +25,9 @@ function App() {
                                 path='products-by-category/:category'
                                 element={<ProductList />}
                             />
+
+                            <Route path='login' element={<LoginForm />} />
+
                             <Route
                                 path='*'
                                 element={

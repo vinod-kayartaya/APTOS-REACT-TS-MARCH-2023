@@ -11,3 +11,8 @@ export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
 export const DECREASE_QUANTITY = 'DECREASE_QUANTITY';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const EMPTY_CART = 'EMPTY_CART';
+
+export const LOGIN = 'LOGIN';
+export const LOGIN_ERROR = 'LOGIN_ERROR';
+export const LOGOUT = 'LOGOUT';
+
