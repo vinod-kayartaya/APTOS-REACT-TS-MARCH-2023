@@ -1,4 +1,4 @@
-import { FETCH_ORDER_HISTORY } from "../actions/actionTypes";
+import { CREATE_ORDER, FETCH_ORDER_HISTORY } from "../actions/actionTypes";
 import { IAction, Order } from "../datatypes";
 
 interface IOrdersRedcuerState {
@@ -14,6 +14,12 @@ const ordersReducer = (state: IOrdersRedcuerState = initialState, action: IActio
 
     if (action.type === FETCH_ORDER_HISTORY) {
         return { ...state, orders: action.payload };
+    }
+
+    if (action.type === CREATE_ORDER) {
+        const orders = [...state.orders];
+        orders.push(action.payload);
+        return { ...state, orders };
     }
 
     return { ...state };
