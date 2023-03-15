@@ -14,3 +14,16 @@ export interface LineItem {
     product: Product;
     quantity: number;
 }
+
+export interface IAction {
+    type: string;
+    payload?: any;
+}
+
+export interface Order {
+    id?: number;
+    customerId?: number;
+    lineItems?: LineItem[];
+    orderDate?: string;
+    orderStatus?: string;
+}

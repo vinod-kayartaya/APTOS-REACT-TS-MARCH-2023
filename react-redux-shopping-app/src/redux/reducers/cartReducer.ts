@@ -1,19 +1,15 @@
 import { ADD_TO_CART, DECREASE_QUANTITY, EMPTY_CART, INCREASE_QUANTITY, REMOVE_FROM_CART } from "../actions/actionTypes";
-import { LineItem } from "../datatypes";
-
+import { LineItem, IAction } from "../datatypes";
 interface CartState {
     cart: Array<LineItem>;
 }
-interface CartAction {
-    type: string;
-    payload?: any;
-}
+
 
 const initialState = {
     cart: []
 };
 
-const cartReducer = (state: CartState = initialState, action: CartAction) => {
+const cartReducer = (state: CartState = initialState, action: IAction) => {
     console.log('cartReducer called with action', action);
 
     if (action.type === ADD_TO_CART) {

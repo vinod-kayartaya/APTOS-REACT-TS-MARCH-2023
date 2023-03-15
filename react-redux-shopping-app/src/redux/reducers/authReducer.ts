@@ -1,15 +1,12 @@
 import { LOGIN, LOGIN_ERROR, LOGOUT } from "../actions/actionTypes";
-
+import { IAction } from "../datatypes";
 interface IState {
     token: string | undefined;
     loginError: string | undefined;
     loggedInUser: any;
     isAuthenticated: boolean;
 }
-interface IAction {
-    type: string;
-    payload?: any;
-}
+
 const initialState: IState = {
     token: undefined,
     loginError: undefined,
@@ -17,6 +14,7 @@ const initialState: IState = {
     isAuthenticated: false
 };
 const authReducer = (state: IState = initialState, action: IAction) => {
+    console.log('authReducer called with action', action);
     if (action.type === LOGIN) {
         const { id, name, token } = action.payload;
         return { ...state, isAuthenticated: true, token, loginError: undefined, loggedInUser: { id, name } };

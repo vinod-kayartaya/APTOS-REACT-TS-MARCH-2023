@@ -16,3 +16,5 @@ export const LOGIN = 'LOGIN';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const LOGOUT = 'LOGOUT';
 
+export const FETCH_ORDER_HISTORY = 'FETCH_ORDER_HISTORY';
+export const FETCH_ORDER_HISTORY_ERROR = 'FETCH_ORDER_HISTORY_ERROR';
