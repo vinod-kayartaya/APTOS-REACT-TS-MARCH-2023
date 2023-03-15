@@ -1,8 +1,10 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CartItems from './components/CartItems';
+import Dashboard from './components/Dashboard';
 import Layout from './components/Layout';
 import LoginForm from './components/LoginForm';
+import OrderHistory from './components/OrderHistory';
 import ProductList from './components/ProductList';
 
 import store from './redux/store';
@@ -26,6 +28,11 @@ function App() {
                                 element={<ProductList />}
                             />
 
+                            <Route path='dashboard' element={<Dashboard />} />
+                            <Route
+                                path='order-history'
+                                element={<OrderHistory />}
+                            />
                             <Route path='login' element={<LoginForm />} />
 
                             <Route

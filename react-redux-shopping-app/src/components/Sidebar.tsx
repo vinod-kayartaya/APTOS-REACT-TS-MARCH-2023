@@ -7,6 +7,9 @@ import {
     fetchProductsByBrand,
     fetchProductsByCategory,
 } from '../redux/actions/productActionCreators';
+
+import { logout } from '../redux/actions/authActionCreators';
+
 import { RootStoreType } from '../redux/store';
 
 interface SidebarProps {
@@ -16,6 +19,8 @@ interface SidebarProps {
     fetchCategories: () => void;
     fetchProductsByBrand: (brand: string) => void;
     fetchProductsByCategory: (category: string) => void;
+    isAuthenticated: boolean;
+    logout: () => void;
 }
 
 export class Sidebar extends Component<SidebarProps> {
@@ -49,10 +54,43 @@ export class Sidebar extends Component<SidebarProps> {
 
         return (
             <>
-                <h3>Shop by brands</h3>
+                <h5 className='mt-3 mb-3'>Shop by brands</h5>
                 <ul className='list-group'>{brandsJsx}</ul>
-                <h3>Shop by categories</h3>
+                <h5 className='mt-3 mb-3'>Shop by categories</h5>
                 <ul className='list-group'>{categoriesJsx}</ul>
+                <h5 className='mt-3 mb-3'>Member area</h5>
+                <ul className='list-group'>
+                    {this.props.isAuthenticated || (
+                        <>
+                            <Link className='list-group-item' to='/login'>
+                                Login
+                            </Link>
+                            <Link className='list-group-item' to='/register'>
+                                Register
+                            </Link>
+                        </>
+                    )}
+                    {this.props.isAuthenticated && (
+                        <>
+                            <Link className='list-group-item' to='/dashboard'>
+                                Dashboard
+                            </Link>
+                            <Link
+                                className='list-group-item'
+                                to='/order-history'
+                            >
+                                Order history
+                            </Link>
+                            <Link
+                                className='list-group-item'
+                                to='/login'
+                                onClick={this.props.logout}
+                            >
+                                Logout
+                            </Link>
+                        </>
+                    )}
+                </ul>
             </>
         );
     }
@@ -61,11 +99,13 @@ export class Sidebar extends Component<SidebarProps> {
 const mapState = (store: RootStoreType) => ({
     brands: store.productReducerState.brands,
     categories: store.productReducerState.categories,
+    isAuthenticated: store.authReducerState.isAuthenticated,
 });
 const mapDispatch = {
     fetchBrands,
     fetchCategories,
     fetchProductsByBrand,
     fetchProductsByCategory,
+    logout,
 };
 export default connect(mapState, mapDispatch)(Sidebar);

@@ -2,6 +2,7 @@ import React, { ChangeEvent, Component, FormEvent } from 'react';
 import { RootStoreType } from '../redux/store';
 import { login } from '../redux/actions/authActionCreators';
 import { connect } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
 interface LoginFormProps {
     loginError: string | undefined;
@@ -53,6 +54,10 @@ export class LoginForm extends Component<LoginFormProps, LoginFormState> {
 
     render() {
         const { email, emailError, password, passwordError } = this.state;
+
+        if (this.props.isAuthenticated) {
+            return <Navigate to='/dashboard' />;
+        }
 
         return (
             <>
