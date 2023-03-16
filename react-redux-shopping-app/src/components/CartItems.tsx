@@ -4,9 +4,9 @@ import { LineItem, Product } from '../redux/datatypes';
 import { RootStoreType } from '../redux/store';
 import AddToCartButton from './AddToCartButton';
 import { removeFromCart, emptyCart } from '../redux/actions/cartActionCreators';
-import { createOrder } from '../redux/actions/ordersActionCreators';
 import { withRouter } from '../hoc/withRouter';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { createOrder } from '../redux/actions/ordersActionCreators';
 
 interface CartItemsProps {
     cart: LineItem[];
