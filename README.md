@@ -13,6 +13,7 @@
 1. [react-redux-toolkit-addressbook-app](./react-redux-toolkit-addressbook-app/)
 1. [react-redux-saga-customers-app](./react-redux-saga-customers-app/)
 1. [react-hooks-demo](./react-hooks-demo/)
+1. [react-redux-todo-testing-demo](./react-redux-todo-testing-demo/)
 
 ![](./images/concepts-1.dio.png)
 
