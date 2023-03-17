@@ -3,19 +3,19 @@ import TodoList from './TodoList';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 
-const initialState = {
-    todoReducerState: {
-        todos: [
-            { id: 5, todoText: 'Buy milk', finished: false },
-            { id: 6, todoText: 'Buy eggs', finished: false },
-        ],
-    },
-};
 const mockStore = configureStore(); // a fuction to create a store
-const store = mockStore(initialState);
 
 describe('TodoList', () => {
     it('should render list of Todo components', () => {
+        const initialState = {
+            todoReducerState: {
+                todos: [
+                    { id: 5, todoText: 'Buy milk', finished: false },
+                    { id: 6, todoText: 'Buy eggs', finished: false },
+                ],
+            },
+        };
+        const store = mockStore(initialState);
         render(
             <Provider store={store}>
                 <TodoList />
