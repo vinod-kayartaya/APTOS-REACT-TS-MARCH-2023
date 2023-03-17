@@ -7,6 +7,12 @@
 1. [react-todo-app](./react-todo-app/)
 1. [rest-server](./rest-server/)
 1. [react-hoc-demo](./react-hoc-demo/)
+1. [react-redux-numbers-app](./react-redux-numbers-app/)
+1. [react-redux-shopping-app](./react-redux-shopping-app/)
+1. [vinbasket](./vinbasket/)
+1. [react-redux-toolkit-addressbook-app](./react-redux-toolkit-addressbook-app/)
+1. [react-redux-saga-customers-app](./react-redux-saga-customers-app/)
+1. [react-hooks-demo](./react-hooks-demo/)
 
 ![](./images/concepts-1.dio.png)
 
@@ -33,7 +39,6 @@ npx create-react-app react-basics --template typescript
 
 -   a function
 -   takes a component as argument, and returns same/modified/new component
-
 
 ```js
 
